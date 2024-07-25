@@ -35,14 +35,14 @@ with st.sidebar:
     # Town list
     town_list = list(sg_pop["PA"].unique())
     # Select town
-    selected_towns = st.multiselect("Select up to 3 towns", town_list, default = town_list[0], max_selections = 3)
+    selected_towns = st.multiselect("Select up to 5 towns", town_list, default = town_list[0], max_selections = 5)
     df_selected_towns = sg_pop[sg_pop["PA"].isin(selected_towns)].copy()
 
     # Instructions
     st.sidebar.header("Instructions")
     st.sidebar.markdown('''
             - Choose a year to view the **geographic distribution**.
-            - Choose up to three towns to display the **population trends**.
+            - Choose up to five towns to display the **population trends**.
             - The information on top gains/losses, most populous, and highest inbound/outbound regions will update based on the selected year.
             ''')
     st.sidebar.subheader("About")
