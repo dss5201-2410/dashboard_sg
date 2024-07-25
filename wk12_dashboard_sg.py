@@ -78,12 +78,10 @@ p_map = (ggplot(df_selected) +
 sg_pop_text = df_selected_towns[df_selected_towns["Time"] == 2010].copy()
 p_tile = (ggplot(df_selected_towns, aes(x = "Time", y = "PA")) +
      geom_tile(aes(fill = "total"), show_legend = False) +
-     geom_text(sg_pop_text, aes(label = "PA"), show_legend = False) +
+     #geom_text(sg_pop_text, aes(label = "PA"), show_legend = False) +
      scale_fill_gradient(low = "azure", high = "steelblue", na_value = "white") +
      labs(x = "", y = "", fill = "Population") +
-     theme_light()) 
-     # Disable text and ticks on y axis
-     #theme(axis_text_y = element_blank()))
+     theme_light())
 
 # 3. Line chart with selected towns highlighted
 sg_text_selected = df_selected_towns[df_selected_towns["Time"] == 2023].copy()
