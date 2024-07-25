@@ -1,5 +1,5 @@
 pandas
 numpy
 geopandas
-plotting
+plotnine
 streamlit
