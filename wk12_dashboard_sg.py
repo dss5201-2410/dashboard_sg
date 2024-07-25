@@ -159,7 +159,7 @@ with st.container():
         
     with col[2]:
         st.markdown("#### Highest outbounds")  
-        top_five_PA = sg_pop_selected.nsmallest(3, "change").sort_values(by = "change", ascending = False)
+        top_five_PA = sg_pop_selected.nsmallest(3, "change").sort_values(by = "change", ascending = True)
         st.dataframe(top_five_PA, column_order=("PA", "change"), hide_index = True, width = None,
                      column_config = {
                          "PA": st.column_config.TextColumn("Planning Region",),
