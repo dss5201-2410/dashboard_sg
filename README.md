@@ -14,5 +14,5 @@
    - Display regions with the highest inbound/outbound population in a selected year.
 
 2. **Trend Analysis:**
-   - Analyze trends in population across town. 
-   - Use visualizations to highlight trends.
+   - Analyze trends in population across selected town(s). 
+   - Use visualizations to highlight the trends.
