@@ -100,7 +100,7 @@ p_line = (ggplot(df_selected_towns, aes(x = "Time", y = "total")) +
 
 #####################
 # App layout
-col = st.columns((2.5, 10), gap = "small", vertical_alignment = "top")
+col = st.columns((3.5, 7), gap = "small", vertical_alignment = "top")
 
 # Column 1
 with col[0]:
@@ -159,7 +159,7 @@ with st.container():
         
     with col[2]:
         st.markdown("#### Highest outbounds")  
-        top_five_PA = sg_pop_selected.nsmallest(3, "change").sort_values(by = "change", ascending = True)
+        top_five_PA = sg_pop_selected.nsmallest(3, "change").sort_values(by = "change", ascending = False)
         st.dataframe(top_five_PA, column_order=("PA", "change"), hide_index = True, width = None,
                      column_config = {
                          "PA": st.column_config.TextColumn("Planning Region",),
