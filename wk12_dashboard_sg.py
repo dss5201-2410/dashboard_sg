@@ -127,6 +127,9 @@ with col[0]:
     
     st.metric(label = "TOTAL", value = total_pop, delta = net_change)
     
+    st.write('''
+            **Gains/Losses:** Regions with high inbound/ outbound residents for the selected year.
+            ''')
     with st.expander("Definition", expanded = False):
         st.write('''
             **Gains/Losses:** Regions with high inbound/ outbound residents for the selected year.
