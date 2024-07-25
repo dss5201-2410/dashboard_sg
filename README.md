@@ -1,4 +1,4 @@
-## SG Population Dashboard for Week 12
+## SG Population Dashboard
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B.svg?style=for-the-badge&logo=Streamlit&logoColor=white)
@@ -16,3 +16,7 @@
 2. **Trend Analysis:**
    - Analyze trends in population across selected town(s). 
    - Use visualizations to highlight the trends.
+
+## Sources of data
+
+- [Singapore Department of Statistics](<https://www.singstat.gov.sg/>).
