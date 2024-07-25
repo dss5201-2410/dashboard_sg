@@ -81,7 +81,8 @@ p_tile = (ggplot(df_selected_towns, aes(x = "Time", y = "PA")) +
      geom_text(sg_pop_text, aes(label = "PA"), show_legend = False) +
      scale_fill_gradient(low = "azure", high = "steelblue", na_value = "white") +
      labs(x = "", y = "", fill = "Population") +
-     theme_light())
+     theme_light() +
+     theme(axis_text_y = element_text(None))
 
 # 3. Line chart with selected towns highlighted
 sg_text_selected = df_selected_towns[df_selected_towns["Time"] == 2023].copy()
