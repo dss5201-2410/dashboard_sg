@@ -136,13 +136,7 @@ with col[0]:
 # Column 2
 with col[1]:
     st.markdown(f"#### Geographic distribution in {selected_year}")
-    st.pyplot(p_map.draw())
-    
-    st.markdown("#### Trend in selected towns")
-    st.pyplot(p_tile.draw())
-      
-    st.divider()
-    st.pyplot(p_line.draw()) 
+    st.pyplot(p_map.draw()) 
        
 # Column 3
 with col[2]:
@@ -174,7 +168,8 @@ with col[2]:
                     "change": st.column_config.ProgressColumn("Changes", format = "%f", min_value = -3000, max_value = 8000)}) 
     
 with st.container():
-   st.write("This is inside the container")
-
-   # You can call any Streamlit command, including custom components:
-   st.bar_chart(np.random.randn(50, 3))
+   st.markdown("#### Trend in selected towns")
+   st.pyplot(p_tile.draw())
+   
+   st.divider()
+   st.pyplot(p_line.draw())
