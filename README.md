@@ -7,3 +7,12 @@
 
 ## Deployment  [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://sgdashboard.streamlit.app/)
 
+## Features
+
+1. **Population Metrics Display:**
+   - Display the geographic distribution in a selected year.
+   - Display regions with the highest inbound/outbound population in a selected year.
+
+2. **Trend Analysis:**
+   - Analyze trends in population across town. 
+   - Use visualizations to highlight trends.
