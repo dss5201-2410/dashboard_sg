@@ -100,7 +100,7 @@ p_line = (ggplot(df_selected_towns, aes(x = "Time", y = "total")) +
 
 #####################
 # App layout
-col = st.columns((3, 6), gap = "small", vertical_alignment = "top")
+col = st.columns((3, 5), gap = "small", vertical_alignment = "top")
 
 # Column 1
 with col[0]:
