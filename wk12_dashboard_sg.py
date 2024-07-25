@@ -172,3 +172,9 @@ with col[2]:
                  column_config = {
                     "PA": st.column_config.TextColumn("Planning Region",),
                     "change": st.column_config.ProgressColumn("Changes", format = "%f", min_value = -3000, max_value = 8000)}) 
+    
+with st.container():
+   st.write("This is inside the container")
+
+   # You can call any Streamlit command, including custom components:
+   st.bar_chart(np.random.randn(50, 3))
