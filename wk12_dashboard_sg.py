@@ -155,7 +155,7 @@ with st.container():
         st.dataframe(top_five_PA, column_order=("PA", "change"), hide_index = True, width = None,
                      column_config = {
                          "PA": st.column_config.TextColumn("Planning Region",),
-                         "change": st.column_config.ProgressColumn("Changes", format = "%f", min_value = -3000, max_value = 8000)})
+                         "change": st.column_config.ProgressColumn("Changes", format = "%f")})
         
     with col[2]:
         st.markdown("#### Highest outbounds")  
@@ -163,7 +163,7 @@ with st.container():
         st.dataframe(top_five_PA, column_order=("PA", "change"), hide_index = True, width = None,
                      column_config = {
                          "PA": st.column_config.TextColumn("Planning Region",),
-                         "change": st.column_config.ProgressColumn("Changes", format = "%f", min_value = -3000, max_value = 8000)})
+                         "change": st.column_config.ProgressColumn("Changes", format = "%f")})
 
 #####################
 with st.container():
