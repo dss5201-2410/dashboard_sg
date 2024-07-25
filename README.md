@@ -9,12 +9,12 @@
 ## Features
 
 1. **Population Metrics Display:**
-   [X] Display the geographic distribution in a selected year.
-   [X] Display regions with the highest inbound/outbound population in a selected year.
+   - [X] Display the geographic distribution in a selected year.
+   - [X] Display regions with the highest inbound/outbound population in a selected year.
 
 2. **Trend Analysis:**
-   [X] Analyze trends in population across selected town(s). 
-   [X] Use visualizations to highlight the trends.
+   - [X] Analyze trends in population across selected town(s). 
+   - [X] Use visualizations to highlight the trends.
 
 ## Sources of data
 
