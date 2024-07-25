@@ -165,7 +165,28 @@ with col[2]:
                  column_config = {
                     "PA": st.column_config.TextColumn("Planning Region",),
                     "change": st.column_config.ProgressColumn("Changes", format = "%f", min_value = -3000, max_value = 8000)}) 
+#####################
+with st.container():
+    st.markdown("#### Trend in selected towns")
+    col = st.columns((3.5, 3.5, 3.5), gap = "small", vertical_alignment = "top")
     
+    with col[0]:
+        st.markdown("#### Most Populus Regions")  
+        top_five_PA = sg_pop_selected.nlargest(3, "total").sort_values(by = "total", ascending = False)
+        st.dataframe(top_five_PA, column_order=("PA", "total"), hide_index = True, width = None,
+                     column_config = {
+                         "PA": st.column_config.TextColumn("Planning Region",),
+                         "total": st.column_config.ProgressColumn("Population", format = "%f", min_value = 0, max_value = 110000)})
+    
+    with col[1]:
+        st.markdown("#### Highest inbounds")  
+        top_five_PA = sg_pop_selected.nlargest(3, "change").sort_values(by = "change", ascending = False)
+        st.dataframe(top_five_PA, column_order=("PA", "change"), hide_index = True, width = None,
+                     column_config = {
+                         "PA": st.column_config.TextColumn("Planning Region",),
+                         "change": st.column_config.ProgressColumn("Changes", format = "%f", min_value = -3000, max_value = 8000)})
+
+#####################
 with st.container():
     st.markdown("#### Trend in selected towns")
     col = st.columns((5, 5), gap = "small", vertical_alignment = "top")
