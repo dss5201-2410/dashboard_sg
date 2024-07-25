@@ -90,8 +90,7 @@ p_line = (ggplot(df_selected_towns, aes(x = "Time", y = "total")) +
           geom_line(df, aes(group = "PA"), size = 2, color = "lightgray") +
           geom_line(aes(color = "PA"), size = 2, show_legend = False) +
           geom_label(sg_text_selected, aes(x = "Time+1", color = "PA", label = "PA"), ha = "left", show_legend = False) +
-          labs(x = "", y = "", color = "",
-               title = "Trend in selected towns") +
+          labs(x = "", y = "", color = "", title = "") +
           scale_x_continuous(breaks = range(min(year_list), 2035, 5))  +
           theme_light() +
           scale_color_brewer(type = "qual", palette = "Set1") +
