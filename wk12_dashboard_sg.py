@@ -135,34 +135,30 @@ with col[0]:
 with col[1]:
     st.markdown(f"#### Geographic distribution in {selected_year}")
     st.pyplot(p_map.draw()) 
-       
-#####################
-with st.container():
-    col = st.columns((3.5, 3.5, 3.5), gap = "small", vertical_alignment = "top")
+
+# Column 1
+with col[2]:
+    st.markdown("#### Most Populus Regions")  
+    top_five_PA = sg_pop_selected.nlargest(3, "total").sort_values(by = "total", ascending = False)
+    st.dataframe(top_five_PA, column_order=("PA", "total"), hide_index = True, width = None,
+                 column_config = {
+                     "PA": st.column_config.TextColumn("Planning Region",),
+                     "total": st.column_config.ProgressColumn("Population", format = "%f", min_value = 0, max_value = 110000)})
     
-    with col[0]:
-        st.markdown("#### Most Populus Regions")  
-        top_five_PA = sg_pop_selected.nlargest(3, "total").sort_values(by = "total", ascending = False)
-        st.dataframe(top_five_PA, column_order=("PA", "total"), hide_index = True, width = None,
-                     column_config = {
-                         "PA": st.column_config.TextColumn("Planning Region",),
-                         "total": st.column_config.ProgressColumn("Population", format = "%f", min_value = 0, max_value = 110000)})
+    st.markdown("#### Highest inbounds")  
+    top_five_PA = sg_pop_selected.nlargest(3, "change").sort_values(by = "change", ascending = False)
+    st.dataframe(top_five_PA, column_order=("PA", "change"), hide_index = True, width = None,
+                 column_config = {
+                     "PA": st.column_config.TextColumn("Planning Region",),
+                    "change": st.column_config.ProgressColumn("Changes", format = "%f")})
     
-    with col[1]:
-        st.markdown("#### Highest inbounds")  
-        top_five_PA = sg_pop_selected.nlargest(3, "change").sort_values(by = "change", ascending = False)
-        st.dataframe(top_five_PA, column_order=("PA", "change"), hide_index = True, width = None,
-                     column_config = {
-                         "PA": st.column_config.TextColumn("Planning Region",),
-                         "change": st.column_config.ProgressColumn("Changes", format = "%f")})
+    st.markdown("#### Highest outbounds")  
+    top_five_PA = sg_pop_selected.nsmallest(3, "change").sort_values(by = "change", ascending = True)
+    st.dataframe(top_five_PA, column_order=("PA", "change"), hide_index = True, width = None,
+                 column_config = {
+                     "PA": st.column_config.TextColumn("Planning Region",),
+                     "change": st.column_config.ProgressColumn("Changes", format = "%f")})
         
-    with col[2]:
-        st.markdown("#### Highest outbounds")  
-        top_five_PA = sg_pop_selected.nsmallest(3, "change").sort_values(by = "change", ascending = True)
-        st.dataframe(top_five_PA, column_order=("PA", "change"), hide_index = True, width = None,
-                     column_config = {
-                         "PA": st.column_config.TextColumn("Planning Region",),
-                         "change": st.column_config.ProgressColumn("Changes", format = "%f")})
 
 #####################
 with st.container():
