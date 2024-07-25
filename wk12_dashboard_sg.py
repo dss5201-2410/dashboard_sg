@@ -3,7 +3,7 @@ import numpy as np
 import geopandas as gpd
 from plotnine import *
 import streamlit as st
-import time
+#import time
 
 # Run in command line to run app
 # streamlit run wk12_dashboard_sg.py
