@@ -167,7 +167,6 @@ with col[2]:
                     "change": st.column_config.ProgressColumn("Changes", format = "%f", min_value = -3000, max_value = 8000)}) 
 #####################
 with st.container():
-    st.markdown("#### Trend in selected towns")
     col = st.columns((3.5, 3.5, 3.5), gap = "small", vertical_alignment = "top")
     
     with col[0]:
@@ -181,6 +180,14 @@ with st.container():
     with col[1]:
         st.markdown("#### Highest inbounds")  
         top_five_PA = sg_pop_selected.nlargest(3, "change").sort_values(by = "change", ascending = False)
+        st.dataframe(top_five_PA, column_order=("PA", "change"), hide_index = True, width = None,
+                     column_config = {
+                         "PA": st.column_config.TextColumn("Planning Region",),
+                         "change": st.column_config.ProgressColumn("Changes", format = "%f", min_value = -3000, max_value = 8000)})
+        
+    with col[2]:
+        st.markdown("#### Highest outbounds")  
+        top_five_PA = sg_pop_selected.nsmallest(3, "change").sort_values(by = "change", ascending = False)
         st.dataframe(top_five_PA, column_order=("PA", "change"), hide_index = True, width = None,
                      column_config = {
                          "PA": st.column_config.TextColumn("Planning Region",),
