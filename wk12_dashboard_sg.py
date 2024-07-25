@@ -168,8 +168,11 @@ with col[2]:
                     "change": st.column_config.ProgressColumn("Changes", format = "%f", min_value = -3000, max_value = 8000)}) 
     
 with st.container():
-   st.markdown("#### Trend in selected towns")
-   st.pyplot(p_tile.draw())
-   
-   st.divider()
-   st.pyplot(p_line.draw())
+    st.markdown("#### Trend in selected towns")
+    col = st.columns((5, 5), gap = "small", vertical_alignment = "top")
+    
+    with col[0]:
+        st.pyplot(p_tile.draw())
+    
+    with col[1]:
+        st.pyplot(p_line.draw())
