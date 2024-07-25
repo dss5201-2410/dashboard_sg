@@ -14,8 +14,8 @@ st.set_page_config(page_title = "SG Population Dashboard", layout = "wide")
 
 #####################
 # Read in data
-sg_pop = pd.read_csv("../../data/wk10_sg_pop_01_23.csv")
-sg_map = gpd.read_file("../../data/wk10_MasterPlan2019.geojson")
+sg_pop = pd.read_csv("wk10_sg_pop_01_23.csv")
+sg_map = gpd.read_file("wk10_MasterPlan2019.geojson")
 df = sg_map.merge(sg_pop, how = "left", left_on = "town", right_on = "PA")
 
 #####################
