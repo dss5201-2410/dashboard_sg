@@ -13,8 +13,8 @@ st.set_page_config(page_title = "SG Population Dashboard", layout = "wide")
 
 #####################
 # Read in data
-sg_geojson = gpd.read_file("data/wk11_MasterPlan2019.geojson")
-sg_pop = pd.read_csv("data/wk11_sg_pop.csv")
+sg_geojson = gpd.read_file("wk11_MasterPlan2019.geojson")
+sg_pop = pd.read_csv("wk11_sg_pop.csv")
 
 #####################
 # Side bar
